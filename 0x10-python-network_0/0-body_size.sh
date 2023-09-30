@@ -1,3 +1,3 @@
 #!/bin/bash
-#script tht shows the size of HTTP response body
-curl -s -I $1 | grep -i Content-Length | awk '{print $2}'
+# A Bash script that takes in a URL, sends a request to that URL
+curl -sI "$1" | grep "content-length" | cut -d ' ' -f 2
